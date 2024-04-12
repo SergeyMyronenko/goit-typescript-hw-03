@@ -23,13 +23,10 @@ class Person {
 }
 
 abstract class House {
-  public door: boolean;
-  public key: Key;
+  public door: boolean = false;
   public tenants: Person[] = [];
 
-  constructor(key: Key) {
-    this.key = key;
-  }
+  constructor(public key: Key) {}
 
   public comeIn(tenant: Person): void {
     if (this.door) {
